@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>investAI - Chat</title>
+    <link rel="stylesheet" href="chat-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header do Chat -->
+        <header class="chat-header">
+            <button class="back-btn" onclick="goBack()">
+                <i class="fas fa-arrow-left"></i>
+            </button>
+            <div class="chat-title">
+                <h1>Chat investAI</h1>
+            </div>
+            <div class="header-actions">
+                <button class="action-btn">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+            </div>
+        </header>
+
+        <!-- Área de Mensagens -->
+        <div class="chat-messages" id="chat-messages">
+            <!-- Mensagem de boas-vindas -->
+            <div class="message ai-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble">
+                        <p>Olá! Sou o investAI, seu assistente de investimentos. Como posso ajudá-lo hoje?</p>
+                    </div>
+                    <div class="message-time">Agora</div>
+                </div>
+            </div>
+
+            <!-- Mensagem de exemplo do usuário -->
+            <div class="message user-message">
+                <div class="message-content">
+                    <div class="message-bubble">
+                        <p>Me mostre desempenho do ativo NVDC34 nos últimos 2 meses comparado com o VALE3</p>
+                    </div>
+                    <div class="message-time">14:32</div>
+                </div>
+                <div class="message-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+            </div>
+
+            <!-- Resposta do AI com dados financeiros -->
+            <div class="message ai-message">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <div class="message-bubble">
+                        <div class="financial-data">
+                            <div class="asset-info">
+                                <div class="asset-name">Nvidia - 19,35 BRL</div>
+                                <div class="asset-change positive">+0,30 (1,57%) hoje</div>
+                            </div>
+                            <div class="asset-info">
+                                <div class="asset-name">Vale S.A. - 56,19 BRL</div>
+                                <div class="asset-change negative">-0,17 (0,30%) hoje</div>
+                            </div>
+                        </div>
+                        <div class="chart-container">
+                            <div class="chart-title">Last 60 days</div>
+                            <div class="chart-placeholder">
+                                <div class="chart-line nvidia-line"></div>
+                                <div class="chart-line vale-line"></div>
+                                <div class="chart-labels">
+                                    <span>NVDC34</span>
+                                    <span>VALE3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message-time">14:33</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Área de Input -->
+        <div class="chat-input-container">
+            <div class="chat-input-wrapper">
+                <button class="attach-btn">
+                    <i class="fas fa-paperclip"></i>
+                </button>
+                <input type="text" class="chat-input" id="chat-input" placeholder="Digite sua mensagem...">
+                <button class="send-btn" id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navegação Inferior -->
+    <nav class="bottom-nav">
+        <div class="nav-item">
+            <i class="fas fa-home nav-icon"></i>
+            <span class="nav-label">Home</span>
+        </div>
+        <div class="nav-item">
+            <i class="far fa-chart-bar nav-icon"></i>
+            <span class="nav-label">Dashboard</span>
+        </div>
+        <div class="nav-item">
+            <i class="far fa-boxes nav-icon"></i>
+            <span class="nav-label">Inventory</span>
+        </div>
+        <div class="nav-item active">
+            <i class="fas fa-comments nav-icon"></i>
+            <span class="nav-label">Chat</span>
+        </div>
+    </nav>
+
+    <!-- Container de Alertas -->
+    <div class="alert-container" id="alert-container"></div>
+
+    <script src="chat-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,1170 @@
+/* Reset e configurações base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: #333;
+    padding: 20px;
+    overflow-x: hidden; /* Previne scroll horizontal */
+}
+
+/* Container da Home */
+.home-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    min-height: calc(100vh - 40px);
+    position: relative;
+    padding-bottom: 80px; /* Espaço para bottom nav fixo */
+    width: 100%; /* Garante que o container use toda a largura disponível */
+    max-width: min(400px, calc(100vw - 40px)); /* Responsivo com margem */
+}
+
+/* Header da Home */
+.home-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-picture {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.greeting {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.premium-section {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.premium-btn {
+    background: #e0e0e0;
+    color: #666;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.premium-btn:hover {
+    background: #d0d0d0;
+}
+
+.premium-crown {
+    color: #ffd700;
+    font-size: 1.2rem;
+}
+
+/* Barra de Pesquisa */
+.search-section {
+    margin-bottom: 20px;
+}
+
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: #f8f8f8;
+    border-radius: 12px;
+    padding: 12px 16px;
+    border: 2px solid #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+.search-bar:focus-within {
+    border-color: #00ffff;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 255, 255, 0.1);
+}
+
+.search-icon {
+    color: #999;
+    margin-right: 12px;
+}
+
+.search-input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    color: #333;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #999;
+}
+
+.filter-icon {
+    color: #999;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter-icon:hover {
+    color: #666;
+}
+
+/* Card Chat investAI */
+.chat-card {
+    background: #f8f8f8;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.chat-card:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.chat-content {
+    flex: 1;
+}
+
+.chat-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.chat-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.chat-icon {
+    font-size: 2rem;
+    color: #0e0f0f;
+    margin-left: 15px;
+}
+
+/* Seções */
+.suggestions-section,
+.dashboards-section,
+.brokerages-section {
+    margin-bottom: 25px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.nav-arrows {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-top: 2px;
+}
+
+.nav-arrow {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s ease;
+    font-size: 0.8rem;
+    line-height: 1;
+    text-align: center;
+    position: relative;
+}
+
+.nav-arrow i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 0.8rem;
+}
+
+.nav-arrow:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* Card de Sugestão */
+.suggestion-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.suggestion-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.suggestion-image {
+    height: 120px;
+    background: linear-gradient(45deg, #ff6b6b, #ffa500);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.suggestion-image::before {
+    content: '⛏️';
+    font-size: 3rem;
+    opacity: 0.8;
+}
+
+.premium-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 500;
+}
+
+.rating-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.rating-badge i {
+    color: #ffd700;
+}
+
+.suggestion-content {
+    padding: 15px;
+    background: white;
+}
+
+.suggestion-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.suggestion-description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Cards de Dashboard */
+.dashboard-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.dashboard-card {
+    background: #f8f8f8;
+    border-radius: 16px;
+    padding: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.dashboard-card:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.dashboard-subtitle {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+.dashboard-value {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0a0a0a;
+}
+
+/* Corretoras Integradas */
+.brokerages-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.brokerage-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.brokerage-item:hover {
+    transform: translateY(-2px);
+}
+
+.brokerage-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.brokerage-logo.nubank {
+    background: #8A05BE;
+}
+
+.brokerage-logo.ion {
+    background: #00A859;
+}
+
+.brokerage-logo.xp {
+    background: #000000;
+}
+
+.brokerage-logo.rico {
+    background: #FF6B35;
+}
+
+.brokerage-name {
+    font-size: 0.8rem;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Navegação Inferior */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    border-radius: 0;
+    padding: 12px 20px;
+    display: flex;
+    gap: 20px;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 8px;
+    border-radius: 12px;
+    min-width: 50px;
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-item.active {
+    background: rgba(0, 255, 255, 0.2);
+}
+
+.nav-icon {
+    font-size: 1.2rem;
+    color: #999;
+    transition: color 0.3s ease;
+}
+
+.nav-item.active .nav-icon {
+    color: #0e0f0f;
+}
+
+.nav-label {
+    font-size: 0.7rem;
+    color: #999;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-item.active .nav-label {
+    color: white;
+}
+
+/* Responsividade para Home */
+
+/* Tablets e telas médias */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+    
+    .home-container {
+        max-width: 100%;
+        margin: 0;
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 1.2rem;
+    }
+    
+    .nav-arrow {
+        width: 28px;
+        height: 28px;
+        font-size: 0.75rem;
+    }
+    
+    .nav-arrow i {
+        font-size: 0.75rem;
+    }
+}
+
+/* Smartphones grandes */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    
+    .home-container {
+        padding: 15px;
+        padding-bottom: 80px; /* Espaço para bottom nav fixo */
+        border-radius: 15px;
+    }
+    
+    .home-header {
+        margin-bottom: 15px;
+        padding-bottom: 12px;
+    }
+    
+    .user-greeting {
+        gap: 10px;
+    }
+    
+    .profile-picture {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .greeting {
+        font-size: 1rem;
+    }
+    
+    .premium-btn {
+        padding: 5px 10px;
+        font-size: 0.75rem;
+    }
+    
+    .premium-crown {
+        font-size: 1rem;
+    }
+    
+    .search-section {
+        margin-bottom: 15px;
+    }
+    
+    .search-bar {
+        padding: 10px 14px;
+    }
+    
+    .search-icon {
+        margin-right: 10px;
+    }
+    
+    .search-input {
+        font-size: 0.9rem;
+    }
+    
+    .chat-card {
+        padding: 15px;
+        margin-bottom: 20px;
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+    
+    .chat-content {
+        margin-bottom: 10px;
+    }
+    
+    .chat-title {
+        font-size: 1.1rem;
+        margin-bottom: 6px;
+    }
+    
+    .chat-description {
+        font-size: 0.8rem;
+    }
+    
+    .chat-icon {
+        font-size: 1.8rem;
+        margin-left: 0;
+    }
+    
+    .suggestions-section,
+    .dashboards-section,
+    .brokerages-section {
+        margin-bottom: 20px;
+    }
+    
+    .section-header {
+        margin-bottom: 12px;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+    }
+    
+    .nav-arrows {
+        gap: 6px;
+        margin-top: 1px;
+    }
+    
+    .nav-arrow {
+        width: 26px;
+        height: 26px;
+        font-size: 0.7rem;
+    }
+    
+    .nav-arrow i {
+        font-size: 0.7rem;
+    }
+    
+    .suggestion-image {
+        height: 100px;
+    }
+    
+    .suggestion-image::before {
+        font-size: 2.5rem;
+    }
+    
+    .premium-badge {
+        top: 8px;
+        left: 8px;
+        padding: 3px 6px;
+        font-size: 0.65rem;
+    }
+    
+    .rating-badge {
+        top: 8px;
+        right: 8px;
+        padding: 3px 6px;
+        font-size: 0.75rem;
+    }
+    
+    .suggestion-content {
+        padding: 12px;
+    }
+    
+    .suggestion-title {
+        font-size: 1rem;
+    }
+    
+    .suggestion-description {
+        font-size: 0.85rem;
+    }
+    
+    .dashboard-cards {
+        gap: 10px;
+    }
+    
+    .dashboard-card {
+        padding: 15px;
+    }
+    
+    .dashboard-title {
+        font-size: 0.9rem;
+    }
+    
+    .dashboard-subtitle {
+        font-size: 0.75rem;
+    }
+    
+    .dashboard-value {
+        font-size: 1.1rem;
+    }
+    
+    .brokerages-grid {
+        gap: 10px;
+    }
+    
+    .brokerage-logo {
+        width: 45px;
+        height: 45px;
+        font-size: 0.6rem;
+    }
+    
+    .brokerage-name {
+        font-size: 0.75rem;
+    }
+    
+    .bottom-nav {
+        bottom: 0;
+        padding: 10px 15px;
+        gap: 15px;
+        left: 0;
+        right: 0;
+        transform: none;
+        width: 100%;
+    }
+    
+    .nav-item {
+        min-width: 45px;
+        padding: 6px;
+    }
+    
+    .nav-icon {
+        font-size: 1.1rem;
+    }
+    
+    .nav-label {
+        font-size: 0.65rem;
+    }
+}
+
+/* Smartphones pequenos */
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+    
+    .home-container {
+        padding: 12px;
+        padding-bottom: 80px; /* Espaço para bottom nav fixo */
+        border-radius: 12px;
+        min-height: calc(100vh - 10px);
+    }
+    
+    .home-header {
+        margin-bottom: 12px;
+        padding-bottom: 10px;
+    }
+    
+    .user-greeting {
+        gap: 8px;
+    }
+    
+    .profile-picture {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .greeting {
+        font-size: 0.9rem;
+    }
+    
+    .premium-btn {
+        padding: 4px 8px;
+        font-size: 0.7rem;
+    }
+    
+    .premium-crown {
+        font-size: 0.9rem;
+    }
+    
+    .search-section {
+        margin-bottom: 12px;
+    }
+    
+    .search-bar {
+        padding: 8px 12px;
+        border-radius: 10px;
+    }
+    
+    .search-icon {
+        margin-right: 8px;
+        font-size: 0.9rem;
+    }
+    
+    .search-input {
+        font-size: 0.85rem;
+    }
+    
+    .filter-icon {
+        font-size: 0.9rem;
+    }
+    
+    .chat-card {
+        padding: 12px;
+        margin-bottom: 15px;
+        border-radius: 12px;
+    }
+    
+    .chat-title {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .chat-description {
+        font-size: 0.75rem;
+        line-height: 1.3;
+    }
+    
+    .chat-icon {
+        font-size: 1.5rem;
+    }
+    
+    .suggestions-section,
+    .dashboards-section,
+    .brokerages-section {
+        margin-bottom: 15px;
+    }
+    
+    .section-header {
+        margin-bottom: 10px;
+    }
+    
+    .section-title {
+        font-size: 1rem;
+    }
+    
+    .nav-arrows {
+        gap: 4px;
+        margin-top: 1px;
+    }
+    
+    .nav-arrow {
+        width: 24px;
+        height: 24px;
+        font-size: 0.65rem;
+    }
+    
+    .nav-arrow i {
+        font-size: 0.65rem;
+    }
+    
+    .suggestion-image {
+        height: 80px;
+    }
+    
+    .suggestion-image::before {
+        font-size: 2rem;
+    }
+    
+    .premium-badge {
+        top: 6px;
+        left: 6px;
+        padding: 2px 5px;
+        font-size: 0.6rem;
+    }
+    
+    .rating-badge {
+        top: 6px;
+        right: 6px;
+        padding: 2px 5px;
+        font-size: 0.7rem;
+    }
+    
+    .suggestion-content {
+        padding: 10px;
+    }
+    
+    .suggestion-title {
+        font-size: 0.9rem;
+    }
+    
+    .suggestion-description {
+        font-size: 0.8rem;
+    }
+    
+    .dashboard-cards {
+        gap: 8px;
+    }
+    
+    .dashboard-card {
+        padding: 12px;
+        border-radius: 12px;
+    }
+    
+    .dashboard-title {
+        font-size: 0.85rem;
+    }
+    
+    .dashboard-subtitle {
+        font-size: 0.7rem;
+    }
+    
+    .dashboard-value {
+        font-size: 1rem;
+    }
+    
+    .brokerages-grid {
+        gap: 8px;
+    }
+    
+    .brokerage-logo {
+        width: 40px;
+        height: 40px;
+        font-size: 0.55rem;
+        border-radius: 10px;
+    }
+    
+    .brokerage-name {
+        font-size: 0.7rem;
+    }
+    
+    .bottom-nav {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 8px 12px;
+        gap: 12px;
+        border-radius: 0;
+    }
+    
+    .nav-item {
+        min-width: 40px;
+        padding: 5px;
+    }
+    
+    .nav-icon {
+        font-size: 1rem;
+    }
+    
+    .nav-label {
+        font-size: 0.6rem;
+    }
+}
+
+/* Telas muito pequenas */
+@media (max-width: 360px) {
+    .home-container {
+        padding: 10px;
+        padding-bottom: 80px; /* Espaço para bottom nav fixo */
+    }
+    
+    .greeting {
+        font-size: 0.85rem;
+    }
+    
+    .chat-card {
+        padding: 10px;
+    }
+    
+    .chat-title {
+        font-size: 0.9rem;
+    }
+    
+    .chat-description {
+        font-size: 0.7rem;
+    }
+    
+    .section-title {
+        font-size: 0.9rem;
+    }
+    
+    .dashboard-card {
+        padding: 10px;
+    }
+    
+    .brokerage-logo {
+        width: 35px;
+        height: 35px;
+        font-size: 0.5rem;
+    }
+    
+    .bottom-nav {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        gap: 8px;
+        padding: 6px 10px;
+        border-radius: 0;
+    }
+    
+    .nav-item {
+        min-width: 35px;
+        padding: 4px;
+    }
+    
+    .nav-icon {
+        font-size: 0.9rem;
+    }
+    
+    .nav-label {
+        font-size: 0.55rem;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.home-container {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Melhorias de acessibilidade */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* ===== SISTEMA DE ALERTAS TEMPORÁRIOS ===== */
+
+.alert-container {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    max-width: 90%;
+    width: 400px;
+}
+
+.alert {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.alert.hide {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.alert-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+    flex-shrink: 0;
+}
+
+.alert-content {
+    flex: 1;
+}
+
+.alert-title {
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin-bottom: 2px;
+    color: #333;
+}
+
+.alert-message {
+    font-size: 0.8rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+.alert-close {
+    background: none;
+    border: none;
+    color: #999;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    flex-shrink: 0;
+}
+
+.alert-close:hover {
+    background: #f0f0f0;
+    color: #666;
+}
+
+/* Tipos de alerta */
+.alert-success {
+    border-left: 4px solid #28a745;
+}
+
+.alert-success .alert-icon {
+    background: #28a745;
+}
+
+.alert-info {
+    border-left: 4px solid #17a2b8;
+}
+
+.alert-info .alert-icon {
+    background: #17a2b8;
+}
+
+.alert-warning {
+    border-left: 4px solid #ffc107;
+}
+
+.alert-warning .alert-icon {
+    background: #ffc107;
+}
+
+.alert-danger {
+    border-left: 4px solid #dc3545;
+}
+
+.alert-danger .alert-icon {
+    background: #dc3545;
+}
+
+/* Barra de progresso do alerta */
+.alert-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 12px 12px;
+    transition: width linear;
+}
+
+.alert-success .alert-progress {
+    background: #28a745;
+}
+
+.alert-info .alert-progress {
+    background: #17a2b8;
+}
+
+.alert-warning .alert-progress {
+    background: #ffc107;
+}
+
+.alert-danger .alert-progress {
+    background: #dc3545;
+}
+
+/* Responsividade dos alertas */
+@media (max-width: 480px) {
+    .alert-container {
+        top: 10px;
+        left: 10px;
+        right: 10px;
+        transform: none;
+        width: auto;
+        max-width: none;
+    }
+    
+    .alert {
+        padding: 12px 16px;
+        border-radius: 10px;
+    }
+    
+    .alert-icon {
+        width: 20px;
+        height: 20px;
+        font-size: 10px;
+    }
+    
+    .alert-title {
+        font-size: 0.85rem;
+    }
+    
+    .alert-message {
+        font-size: 0.75rem;
+    }
+}
